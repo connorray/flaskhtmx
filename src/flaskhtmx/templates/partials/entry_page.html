@@ -1,0 +1,6 @@
+<!-- go through a list of entries and render them -->
+{% for item in entries %}
+  {# in our flask app we installed render_partial so we can pass this stuff to our partial entry.html #}
+  {{ render_partial("partials/entry.html", title=item.title, published=item.published, summary=item.summary,
+    media_content=item.media_content, author=item.author, link=item.link) }}
+{% endfor %}
